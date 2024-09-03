@@ -1,13 +1,39 @@
 # Changes here will be overwritten by Copier
+SelectCitation:
+- AddCitationFile_flag
+- AddCFFConvert_flag
+SelectCodeQualityFeatures:
+- AddLocalTests_flag
+- SelectGitHubActions_flag
+- AddLinting_flag
+- AddPreCommit_flag
+- AddSonarCloud_flag
+- AddEditorConfig_flag
+SelectCommunityFeatures:
+- AddCodeConduct_flag
+- AddContributing_flag
+SelectDocumentationFeatures:
+- AddLocalDocumentation_flag
+- AddOnlineDocumentation_flag
+- AddDevDoc_flag
+- AddGitHubActionDocumentation_flag
+SelectGitHubActions:
+- AddGitHubActionBuild_flag
+- AddLinkCheck_flag
+SelectPublishReleaseFeatures:
+- SelectCitation_flag
+- AddChangeLog_flag
+- AddZenodo_flag
 _commit: 0.6.0-30-g6ad1486
 _src_path: https://github.com/NLeSC/python-template
-copyright_holder: dfvfv
+code_of_conduct_email: sdhg@afvs.afs
+copyright_holder: olga
 email: sdhg@afvs.afs
-full_name: dfv
-github_organization: sefwv
-keywords: qwe
+full_name: olga lya
+github_organization: somename
+keywords: kw1,kw2
 license: Apachev2
-package_name: sdv
-package_short_description: sfvdv
-template_profile: minimum
-version: 0.1.0
+package_name: olgaspackage
+package_short_description: Package about nothing
+template_profile: ask
+version: 0.1.10

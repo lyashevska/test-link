@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 authors = [
-    { name = "dfv", email = "sdhg@afvs.afs" }
+    { name = "olga lya", email = "sdhg@afvs.afs" }
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -23,20 +23,32 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = []
-description = "sfvdv"
-keywords = ["qwe"]
+description = "Package about nothing"
+keywords = ["kw1","kw2"]
 license = {file = "LICENSE"}
-name = "sdv"
+name = "olgaspackage"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.8"
-version = "0.1.0"
+version = "0.1.10"
 
 [project.optional-dependencies]
 dev = [
     "build",  # build is not only used in publishing (below), but also in the template's test suite
     "bump-my-version",
+    "coverage [toml]",
+    "pytest",
+    "pytest-cov",
     "ruff",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
     "tox",
+    "myst_parser",
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autoapi",
     "myst_parser",
 ]
 publishing = [
@@ -46,24 +58,34 @@ publishing = [
 ]
 
 [project.urls]
-Repository = "https://github.com/sefwv/sdv"
-Issues = "https://github.com/sefwv/sdv/issues"
+Repository = "https://github.com/somename/olgaspackage"
+Issues = "https://github.com/somename/olgaspackage/issues"
+Changelog = "https://github.com/somename/olgaspackage/CHANGELOG.md"
+ReadTheDocs = "https://olgaspackage.readthedocs.io"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 
-
-
+[tool.coverage.run]
+branch = true
+source = ["src/olgaspackage"]
+command_line = "-m pytest"
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
 envlist = py38,py39,py310,py311,py312
 skip_missing_interpreters = true
-
+[testenv]
+commands = pytest
+extras = dev
 """
 
 [tool.ruff]
 line-length = 120
 output-format = "concise"
+extend-exclude = ["docs"]
 
 [tool.ruff.lint]
 # Allow unused variables when underscore-prefixed.
@@ -97,19 +119,21 @@ pydocstyle.convention = "google"
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["sdv"]
+known-first-party = ["olgaspackage"]
 force-single-line = true
 no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
 
 [tool.bumpversion]
-current_version = "0.1.0"
+current_version = "0.1.10"
 
 [[tool.bumpversion.files]]
-filename = "src/sdv/__init__.py"
+filename = "src/olgaspackage/__init__.py"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
 
-
-
+[[tool.bumpversion.files]]
+filename = "docs/conf.py"
